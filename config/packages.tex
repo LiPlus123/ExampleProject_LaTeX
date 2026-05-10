@@ -10,7 +10,7 @@
 \usepackage{geometry}                               % 页面设置
 \usepackage{xcolor}                                 % 颜色支持
 \usepackage{graphicx}                               % 图片支持
-% \usepackage{tcolorbox}                              % 盒子支持
+\usepackage{tcolorbox}                              % 盒子支持
 
 % 参考文献支持
 \usepackage[
@@ -28,7 +28,15 @@
   url=true
 ]{biblatex}
 
-\usepackage{hyperref}                               % 超链接支持
+% 超链接支持
+\usepackage[
+    colorlinks=true,        % 启用彩色链接
+    linkcolor=blue,         % 章节、图表等内部链接颜色
+    citecolor=blue,         % 引用链接颜色
+    urlcolor=blue           % URL 链接颜色
+    pdfborder={0 0 0},      % 去掉链接周围的边框
+]{hyperref}
+
 \usepackage{cleveref}                               % 智能引用支持
 
 %--------------------------------------------------------------------------------------
@@ -123,7 +131,14 @@
 \addbibresource{bibliography/references.bib} % 添加参考文献数据库文件
 
 %--------------------------------------------------------------------------------------
-% 索引设置
+% 注意盒子
 %--------------------------------------------------------------------------------------
-\makeindex
-
+\newtcolorbox{important}[1][]
+{
+    colback=gray!10!white, % 盒子背景色
+    colframe=gray!50!black, % 盒子边框色
+    title=说明, % 盒子标题
+    before=\vspace{0.5em}, % 盒子前间距
+    after=\vspace{1em}, % 盒子后间距
+    #1
+}

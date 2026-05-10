@@ -2,7 +2,8 @@
 \input{config/packages}
 \input{config/macros}
 
-\title{LaTeX 实例工程}
+\makeindex
+\title{LaTeX 工程实例}
 \author{作者 XXX}
 \begin{document}
 
@@ -13,16 +14,16 @@
 \tableofcontents
 
 \mainmatter
-\part{部分}
+% \part{部分}
 \input{chapters/chapter_1/content}
 \input{chapters/chapter_2/content}
 
 \appendix
-\input{appendics/appendix_1}
-\input{appendics/appendix_2}
+\input{appendices/appendix_1}
+\input{appendices/appendix_2}
 
 \backmatter
-% \input{bibliography/bibliography}
-\input{index/index}
+\input{bibliography/bibliography}
+\printindex
 
 \end{document}
